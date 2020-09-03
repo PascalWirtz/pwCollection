@@ -184,39 +184,38 @@ namespace pw {
 
 		template<typename T>
 		inline bool GetValue(const string_t& sKey, T& t) const {
-			if (!Contains(sKey)) {
-				return false;
+			if (Contains(sKey)) {
+				stringstream_t ss(m_Values.at(sKey));
+				return (ss >> t);
 			}
-
-			stringstream_t ss(m_Values.at(sKey));
-			return (ss >> t);
+			return false;
 		}
 
 		template<>
 		inline bool GetValue<string_t>(const string_t& sKey, string_t& s) const {
-			if (!Contains(sKey)) {
-				return false;
+			if (Contains(sKey)) {
+				s = m_Values.at(sKey);
+				return true;
 			}
-			s = m_Values.at(sKey);
-			return true;
+			return false;
 		}
 
 		template<typename T>
 		inline T GetValue(const string_t& sKey) const {
 			T r;
-
 			if (Contains(sKey)) {
 				stringstream_t ss(m_Values.at(sKey));
 				iss >> r;
 			}
-
 			return r;
 		}
 
 		template<>
 		inline string_t GetValue(const string_t& sKey) const {
-			if (!Contains(sKey)) { return pwTEXT(""); }
-			return m_Values.at(sKey);
+			if (!Contains(sKey)) { 
+				return m_Values.at(sKey);
+			}
+			return pwTEXT(""); 
 		}
 
 		inline static void Parse(const string_t& sData, ValueMap& list, char_t delim = pwTEXT('\0')) {
