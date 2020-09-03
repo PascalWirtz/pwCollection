@@ -1,0 +1,13 @@
+video {
+	vsync			1;
+	width			1920;
+	height			1080;
+	bpp				32;
+	fullscreen		1;
+}
+
+plugins {
+	0				"plugin1";
+	1				"plugin2";
+	2				"plugin3";
+}
