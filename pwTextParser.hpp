@@ -186,7 +186,7 @@ namespace pw {
 		inline bool GetValue(const string_t& sKey, T& t) const {
 			if (Contains(sKey)) {
 				stringstream_t ss(m_Values.at(sKey));
-				return (ss >> t);
+				return (bool)(ss >> t);
 			}
 			return false;
 		}
@@ -205,14 +205,14 @@ namespace pw {
 			T r;
 			if (Contains(sKey)) {
 				stringstream_t ss(m_Values.at(sKey));
-				iss >> r;
+				ss >> r;
 			}
 			return r;
 		}
 
 		template<>
 		inline string_t GetValue(const string_t& sKey) const {
-			if (!Contains(sKey)) { 
+			if (Contains(sKey)) { 
 				return m_Values.at(sKey);
 			}
 			return pwTEXT(""); 
