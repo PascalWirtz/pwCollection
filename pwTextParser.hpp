@@ -1,7 +1,7 @@
 //		
 //	pwCollection
 //	File: 
-//		TextParser.hpp
+//		pwTextParser.hpp
 //
 //	Description:
 //		Parses formatted (format see below) text files into key => value pairs.
