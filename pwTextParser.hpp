@@ -56,14 +56,14 @@
 		#define pwTEXT(x)		L ## x
 	#endif
 	#ifndef pwToString
-		#define pwToString(x) std::to_wstring((x))
+		#define pwToString(x)	std::to_wstring((x))
 	#endif
 #else
 	#ifndef pwTEXT
 		#define pwTEXT(x)		x
 	#endif
 	#ifndef pwToString
-		#define pwToString(x) std::to_string((x))
+		#define pwToString(x)	std::to_string((x))
 	#endif
 #endif
 
@@ -72,15 +72,15 @@ namespace pw {
 	public:
 
 #ifdef _UNICODE
-		using string_t			= std::wstring;
-		using stringstream_t	= std::wstringstream;
-		using ostringstream_t	= std::wostringstream;
-		using char_t			= wchar_t;
+		using string_t = std::wstring;
+		using stringstream_t = std::wstringstream;
+		using ostringstream_t = std::wostringstream;
+		using char_t = wchar_t;
 #else
-		using string_t			= std::string;
-		using stringstream_t	= std::stringstream;
-		using ostringstream_t	= std::ostringstream;
-		using char_t			= char;		
+		using string_t = std::string;
+		using stringstream_t = std::stringstream;
+		using ostringstream_t = std::ostringstream;
+		using char_t = char;
 #endif
 		
 		using ValueMap = std::map<string_t, string_t>;
