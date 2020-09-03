@@ -43,7 +43,9 @@
 //		Comments are not supported.		
 //
 //		As all data is stored as string values the helper class also comes with conversion functions.
+//		Have fun!
 //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #ifndef __PW__TEXTPARSER__HPP
 #define __PW__TEXTPARSER__HPP
 
@@ -149,16 +151,37 @@ namespace pw {
 			return (!m_Data.empty() && m_Values.size() != 0);
 		}
 
-		inline ValueMap::iterator begin() { return m_Values.begin(); }
-		inline ValueMap::const_iterator begin() const { return m_Values.begin(); }
-		inline ValueMap::iterator end() { return m_Values.end(); }
-		inline ValueMap::const_iterator end() const { return m_Values.end(); }
-		inline ValueMap::reverse_iterator rbegin() { return m_Values.rbegin(); }
-		inline ValueMap::const_reverse_iterator	rbegin() const { return m_Values.rbegin(); }
-		inline ValueMap::reverse_iterator rend() { return m_Values.rend(); }
-		inline ValueMap::const_reverse_iterator	rend() const { return m_Values.rend(); }
-		inline ValueMap::const_iterator cbegin() const { return m_Values.cbegin(); }
-		inline ValueMap::const_iterator cend() const { return m_Values.cend(); }
+		inline ValueMap::iterator begin() { 
+			return m_Values.begin(); 
+		}
+
+		inline ValueMap::const_iterator cbegin() const {
+			return m_Values.cbegin(); 
+		}
+
+		inline ValueMap::iterator end() { 
+			return m_Values.end();
+		}
+
+		inline ValueMap::const_iterator cend() const {
+			return m_Values.cend();
+		}
+
+		inline ValueMap::reverse_iterator rbegin() { 
+			return m_Values.rbegin(); 
+		}
+
+		inline ValueMap::const_reverse_iterator	rbegin() const { 
+			return m_Values.rbegin(); 
+		}
+
+		inline ValueMap::reverse_iterator rend() { 
+			return m_Values.rend();
+		}
+
+		inline ValueMap::const_reverse_iterator	rend() const {
+			return m_Values.rend(); 
+		}
 
 		inline bool Contains(const string_t& sKey) const {
 			return (m_Values.count(sKey) > 0);
